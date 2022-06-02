@@ -1,4 +1,4 @@
-### Homework 4 - Usage instructions
+### Usage instructions
 
 To run amcl_simulation, rins_world and other support scripts at the same time:
 
