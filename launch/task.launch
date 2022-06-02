@@ -1,0 +1,23 @@
+<launch>
+    
+    <!-- normal vector service  -->
+    <node  name="normal" pkg="homework4" type="normal_vector_service.py"/>
+    <!-- Face detection -->
+    <node name="face_detection" pkg="homework4" type="face_localizer_haar.py" output="screen"/>
+
+    <!-- Ring detection -->
+    <node name="ring_detection" pkg="homework4" type="detect_rings.py" output="screen"/>
+
+    <!-- Cylinder detection -->
+    <node name="cylinder_detection"  pkg="homework4" type="cylinder_detection.py" output="screen"/>
+
+    <!-- Movement -->
+    <node name="map_goals" pkg="homework4" type="homework4_map_goals" output="screen"/>
+
+    <!-- QR code -->
+    <node name="extract_qr" pkg="homework4" type="extract_qr.py" output="screen"/>
+
+    <!-- speech -->
+    <node name="extract_speech" pkg="homework4" type="extract_speech.py" output="screen"/>
+
+</launch>

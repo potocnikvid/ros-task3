@@ -1,0 +1,20 @@
+<launch>
+    <!-- Gazebo -->
+    <include file="$(find homework4)/launch/rins_world.launch"/>
+
+    <!-- Rviz -->
+    <include file="$(find homework4)/launch/amcl_simulation.launch"/>
+    <!-- Face detection -->
+    <node name="face_detection" pkg="homework4" type="face_localizer_haar.py" output="screen"/>
+
+    <!-- Movement -->
+    <node name="map_goals" pkg="homework4" type="homework4_map_goals" output="screen"/>
+
+    <!-- Sound -->
+    <node name="sound_play" pkg="sound_play" type="soundplay_node.py" output="screen">
+        <param name="sounds_dir" type="string" value="$(find homework4)/sounds/"/>
+    </node>
+
+    <!-- Map config -->
+    <rosparam file="$(find homework4)/config.yaml"/>
+</launch>
